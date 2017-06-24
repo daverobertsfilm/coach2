@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subvehicle_id: MyString
+  vehicle_id: 
+  coach_tour_id: 
+
+two:
+  subvehicle_id: MyString
+  vehicle_id: 
+  coach_tour_id: 

@@ -1,27 +1,36 @@
-<h1>Listing hotels</h1>
-
-<table>
+<%- model_class = Hotel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Hotel %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Hotel</th>
-      <th>Coach tour</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:hotel_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @hotels.each do |hotel| %>
       <tr>
+        <td><%= hotel.id %></td>
         <td><%= hotel.hotel_id %></td>
-        <td><%= hotel.coach_tour %></td>
-        <td><%= link_to 'Show', hotel %></td>
-        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
-        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l hotel.created_at, format: :long %></td>
+        <td>
+          <%= link_to hotel_path(hotel), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to hotel_path(hotel), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Hotel', new_hotel_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_hotel_path,
+            :class => 'btn btn-primary' %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sub_vehicles
+
   resources :sub_hotels
 
   resources :coach_tours

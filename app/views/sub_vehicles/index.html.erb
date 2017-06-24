@@ -1,0 +1,29 @@
+<h1>Listing sub_vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subvehicle</th>
+      <th>Vehicle</th>
+      <th>Coach tour</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_vehicles.each do |sub_vehicle| %>
+      <tr>
+        <td><%= sub_vehicle.subvehicle_id %></td>
+        <td><%= sub_vehicle.vehicle %></td>
+        <td><%= sub_vehicle.coach_tour %></td>
+        <td><%= link_to 'Show', sub_vehicle %></td>
+        <td><%= link_to 'Edit', edit_sub_vehicle_path(sub_vehicle) %></td>
+        <td><%= link_to 'Destroy', sub_vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub vehicle', new_sub_vehicle_path %>

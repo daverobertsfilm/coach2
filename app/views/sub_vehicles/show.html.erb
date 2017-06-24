@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subvehicle:</strong>
+  <%= @sub_vehicle.subvehicle_id %>
+</p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @sub_vehicle.vehicle %>
+</p>
+
+<p>
+  <strong>Coach tour:</strong>
+  <%= @sub_vehicle.coach_tour %>
+</p>
+
+<%= link_to 'Edit', edit_sub_vehicle_path(@sub_vehicle) %> |
+<%= link_to 'Back', sub_vehicles_path %>

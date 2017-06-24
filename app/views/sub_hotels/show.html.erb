@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subhotel:</strong>
+  <%= @sub_hotel.subhotel_id %>
+</p>
+
+<p>
+  <strong>Hotel:</strong>
+  <%= @sub_hotel.hotel %>
+</p>
+
+<p>
+  <strong>Coach tour:</strong>
+  <%= @sub_hotel.coach_tour %>
+</p>
+
+<%= link_to 'Edit', edit_sub_hotel_path(@sub_hotel) %> |
+<%= link_to 'Back', sub_hotels_path %>

@@ -1,0 +1,13 @@
+<%= simple_form_for(@sub_hotel) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :subhotel_id %>
+    <%= f.association :hotel %>
+    <%= f.association :coach_tour %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

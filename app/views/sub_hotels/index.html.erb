@@ -1,0 +1,29 @@
+<h1>Listing sub_hotels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subhotel</th>
+      <th>Hotel</th>
+      <th>Coach tour</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_hotels.each do |sub_hotel| %>
+      <tr>
+        <td><%= sub_hotel.subhotel_id %></td>
+        <td><%= sub_hotel.hotel %></td>
+        <td><%= sub_hotel.coach_tour %></td>
+        <td><%= link_to 'Show', sub_hotel %></td>
+        <td><%= link_to 'Edit', edit_sub_hotel_path(sub_hotel) %></td>
+        <td><%= link_to 'Destroy', sub_hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub hotel', new_sub_hotel_path %>

@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = SubHotel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => SubHotel %></h1>
+</div>
 
-<p>
-  <strong>Subhotel:</strong>
-  <%= @sub_hotel.subhotel_id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:subhotel_id) %></dt>
+      <dd><pre class="prettyprint"><%= @sub_hotel.subhotel_id %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Hotel:</strong>
-  <%= @sub_hotel.hotel %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              sub_hotels_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_sub_hotel_path(@sub_hotel), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              sub_hotel_path(@sub_hotel),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Coach tour:</strong>
-  <%= @sub_hotel.coach_tour %>
-</p>
-
-<%= link_to 'Edit', edit_sub_hotel_path(@sub_hotel) %> |
-<%= link_to 'Back', sub_hotels_path %>

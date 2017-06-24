@@ -1,6 +1,5 @@
-<h1>Editing sub_hotel</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @sub_hotel %> |
-<%= link_to 'Back', sub_hotels_path %>
+<%- model_class = SubHotel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => SubHotel %></h1>
+</div>
+<%= render :partial => 'form' %>

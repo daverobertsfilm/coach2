@@ -1,13 +1,16 @@
-<%= simple_form_for(@sub_hotel) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :subhotel_id %>
-    <%= f.association :hotel %>
-    <%= f.association :coach_tour %>
+<%= form_for @sub_hotel, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :subhotel_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :subhotel_id, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  sub_hotels_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
